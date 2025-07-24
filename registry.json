@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "registry",
+  "homepage": "https://registry.com",
+  "items": [
+    {
+      "name": "phoneinput",
+      "description": "A Phone Input Component with Country Selector and Search",
+      "type": "registry:component",
+      "dependencies": ["fuse.js", "react-phone-input-2"],
+      "registryDependencies": [
+        "button",
+        "command",
+        "input",
+        "popover",
+        "scroll-area"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/components/phone-input/phone-input.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}
