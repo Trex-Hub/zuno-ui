@@ -1,31 +1,51 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import * as SheetPrimitive from "@radix-ui/react-dialog"
-import { XIcon } from "lucide-react"
+import * as React from "react";
+import * as SheetPrimitive from "@radix-ui/react-dialog";
+import { XIcon } from "lucide-react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 function Sheet({ ...props }: React.ComponentProps<typeof SheetPrimitive.Root>) {
-  return <SheetPrimitive.Root data-slot="sheet" {...props} />
+  return (
+    <SheetPrimitive.Root data-slot="sheet" {...props} data-oid="izc.7fk" />
+  );
 }
 
 function SheetTrigger({
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Trigger>) {
-  return <SheetPrimitive.Trigger data-slot="sheet-trigger" {...props} />
+  return (
+    <SheetPrimitive.Trigger
+      data-slot="sheet-trigger"
+      {...props}
+      data-oid="cj-rncm"
+    />
+  );
 }
 
 function SheetClose({
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Close>) {
-  return <SheetPrimitive.Close data-slot="sheet-close" {...props} />
+  return (
+    <SheetPrimitive.Close
+      data-slot="sheet-close"
+      {...props}
+      data-oid="kiq_-5p"
+    />
+  );
 }
 
 function SheetPortal({
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Portal>) {
-  return <SheetPrimitive.Portal data-slot="sheet-portal" {...props} />
+  return (
+    <SheetPrimitive.Portal
+      data-slot="sheet-portal"
+      {...props}
+      data-oid="5vj2k5-"
+    />
+  );
 }
 
 function SheetOverlay({
@@ -37,11 +57,12 @@ function SheetOverlay({
       data-slot="sheet-overlay"
       className={cn(
         "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50",
-        className
+        className,
       )}
       {...props}
+      data-oid="g.be:50"
     />
-  )
+  );
 }
 
 function SheetContent({
@@ -50,11 +71,11 @@ function SheetContent({
   side = "right",
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Content> & {
-  side?: "top" | "right" | "bottom" | "left"
+  side?: "top" | "right" | "bottom" | "left";
 }) {
   return (
-    <SheetPortal>
-      <SheetOverlay />
+    <SheetPortal data-oid="leok9ln">
+      <SheetOverlay data-oid="tg_tb54" />
       <SheetPrimitive.Content
         data-slot="sheet-content"
         className={cn(
@@ -67,18 +88,24 @@ function SheetContent({
             "data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top inset-x-0 top-0 h-auto border-b",
           side === "bottom" &&
             "data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom inset-x-0 bottom-0 h-auto border-t",
-          className
+          className,
         )}
         {...props}
+        data-oid="tna:7ks"
       >
         {children}
-        <SheetPrimitive.Close className="ring-offset-background focus:ring-ring data-[state=open]:bg-secondary absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none">
-          <XIcon className="size-4" />
-          <span className="sr-only">Close</span>
+        <SheetPrimitive.Close
+          className="ring-offset-background focus:ring-ring data-[state=open]:bg-secondary absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none"
+          data-oid="low479c"
+        >
+          <XIcon className="size-4" data-oid="1intje9" />
+          <span className="sr-only" data-oid="hxdcv2j">
+            Close
+          </span>
         </SheetPrimitive.Close>
       </SheetPrimitive.Content>
     </SheetPortal>
-  )
+  );
 }
 
 function SheetHeader({ className, ...props }: React.ComponentProps<"div">) {
@@ -87,8 +114,9 @@ function SheetHeader({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="sheet-header"
       className={cn("flex flex-col gap-1.5 p-4", className)}
       {...props}
+      data-oid="-lx80um"
     />
-  )
+  );
 }
 
 function SheetFooter({ className, ...props }: React.ComponentProps<"div">) {
@@ -97,8 +125,9 @@ function SheetFooter({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="sheet-footer"
       className={cn("mt-auto flex flex-col gap-2 p-4", className)}
       {...props}
+      data-oid="_7-91e2"
     />
-  )
+  );
 }
 
 function SheetTitle({
@@ -110,8 +139,9 @@ function SheetTitle({
       data-slot="sheet-title"
       className={cn("text-foreground font-semibold", className)}
       {...props}
+      data-oid="uon-bre"
     />
-  )
+  );
 }
 
 function SheetDescription({
@@ -123,8 +153,9 @@ function SheetDescription({
       data-slot="sheet-description"
       className={cn("text-muted-foreground text-sm", className)}
       {...props}
+      data-oid="90dzq6j"
     />
-  )
+  );
 }
 
 export {
@@ -136,4 +167,4 @@ export {
   SheetFooter,
   SheetTitle,
   SheetDescription,
-}
+};

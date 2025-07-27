@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import { ChevronDown, Check } from "lucide-react";
 import * as RPNInput from "react-phone-number-input";
@@ -42,9 +43,10 @@ const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> =
           smartCaret={false}
           onChange={(value) => onChange?.(value || ("" as RPNInput.Value))}
           {...props}
+          data-oid="hf5d41r"
         />
       );
-    }
+    },
   );
 PhoneInput.displayName = "PhoneInput";
 
@@ -56,6 +58,7 @@ const InputComponent = React.forwardRef<
     className={cn("rounded-e-lg rounded-s-none", className)}
     {...props}
     ref={ref}
+    data-oid="hcjo-mx"
   />
 ));
 InputComponent.displayName = "InputComponent";
@@ -90,7 +93,7 @@ const CountrySelect = ({
           ? `+${RPNInput.getCountryCallingCode(country.value)}`
           : "",
       })),
-    [rawCountryList]
+    [rawCountryList],
   );
 
   const fuse = React.useMemo(
@@ -100,7 +103,7 @@ const CountrySelect = ({
         threshold: 0.3,
         ignoreLocation: true,
       }),
-    [countryList]
+    [countryList],
   );
 
   const filteredCountries = React.useMemo(() => {
@@ -124,40 +127,46 @@ const CountrySelect = ({
   };
 
   return (
-    <Popover open={open} onOpenChange={handleOpenChange}>
-      <PopoverTrigger asChild>
+    <Popover open={open} onOpenChange={handleOpenChange} data-oid="urv:-ba">
+      <PopoverTrigger asChild data-oid="91s.xl-">
         <Button
           type="button"
           variant="outline"
           className="flex gap-1 rounded-e-none rounded-s-lg border-r-0 px-3 focus:z-10"
           disabled={disabled}
+          data-oid="p._nmxd"
         >
           <FlagComponent
             country={selectedCountry}
             countryName={selectedCountry}
+            data-oid="l-gsing"
           />
-          <span className="flex-1 text-sm px-1">
+
+          <span className="flex-1 text-sm px-1" data-oid="tlxmj06">
             {getCountryCode(selectedCountry)}
           </span>
           <ChevronDown
             className={cn(
               "-mr-2 size-4 opacity-50",
-              disabled ? "hidden" : "opacity-100"
+              disabled ? "hidden" : "opacity-100",
             )}
+            data-oid="hh7.4sp"
           />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="p-0" align="start">
-        <Command shouldFilter={false}>
+      <PopoverContent className="p-0" align="start" data-oid="vg_bo0d">
+        <Command shouldFilter={false} data-oid="ecas_ge">
           <CommandInput
             placeholder="Search country or code..."
             value={inputValue}
             onValueChange={setInputValue}
+            data-oid="y3uqj6n"
           />
-          <CommandList>
-            <ScrollArea className="h-72">
-              <CommandEmpty>No country found.</CommandEmpty>
-              <CommandGroup>
+
+          <CommandList data-oid="mmjltx8">
+            <ScrollArea className="h-72" data-oid="g_smueq">
+              <CommandEmpty data-oid="l5gna:3">No country found.</CommandEmpty>
+              <CommandGroup data-oid="uymkfuv">
                 {filteredCountries.map(({ value, label, code }) =>
                   label && value ? (
                     <CommandItem
@@ -166,19 +175,32 @@ const CountrySelect = ({
                         onChange(value);
                         setOpen(false);
                       }}
+                      data-oid=".hw_w21"
                     >
-                      <FlagComponent country={value} countryName={label} />
-                      <span className="flex-1 text-sm">{label}</span>
-                      <span className="text-sm text-foreground/50">{code}</span>
+                      <FlagComponent
+                        country={value}
+                        countryName={label}
+                        data-oid="dp:y.47"
+                      />
+                      <span className="flex-1 text-sm" data-oid="vwcdin_">
+                        {label}
+                      </span>
+                      <span
+                        className="text-sm text-foreground/50"
+                        data-oid="fxoqg-h"
+                      >
+                        {code}
+                      </span>
                       <Check
                         className={`ml-auto size-4 ${
                           value === selectedCountry
                             ? "opacity-100"
                             : "opacity-0"
                         }`}
+                        data-oid="rawevna"
                       />
                     </CommandItem>
-                  ) : null
+                  ) : null,
                 )}
               </CommandGroup>
             </ScrollArea>
@@ -193,8 +215,11 @@ const FlagComponent = ({ country, countryName }: RPNInput.FlagProps) => {
   const Flag = flags[country];
 
   return (
-    <span className="flex h-4 w-6 overflow-hidden rounded-sm">
-      {Flag && <Flag title={countryName} />}
+    <span
+      className="flex h-4 w-6 overflow-hidden rounded-sm"
+      data-oid="__.-qpt"
+    >
+      {Flag && <Flag title={countryName} data-oid="fgkmtbs" />}
     </span>
   );
 };
