@@ -3,10 +3,7 @@
   "name": "phoneinput",
   "type": "registry:component",
   "description": "A Phone Input Component with Country Selector and Search",
-  "dependencies": [
-    "fuse.js",
-    "react-phone-input-2"
-  ],
+  "dependencies": ["fuse.js", "react-phone-input-2"],
   "registryDependencies": [
     "button",
     "command",
